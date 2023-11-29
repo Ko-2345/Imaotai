@@ -16,4 +16,15 @@ jobs:
       run: |
         echo "This is a scheduled task."
         # Add your commands or script here
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Debug
+      run: |
+        echo "当前时间：$(date)"
+        echo "这是一个定时任务。"
+        # 添加其他命令或脚本
+
 
