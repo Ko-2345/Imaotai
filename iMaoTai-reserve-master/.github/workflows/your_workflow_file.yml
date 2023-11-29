@@ -1,18 +1,19 @@
-name: My Workflow
+name: Scheduled Workflow
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '30 8 * * *'  # # 每天UTC时间 08:30，对应北京时间下午 04:30。这样配置后，您的工作流将在每天UTC时间的下午8:30执行，对应北京时间的下午4:30
 
 jobs:
-  build:
+  my-job:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Run Build
+    - name: Run Scheduled Task
       run: |
-        echo "Hello, GitHub Actions!"
+        echo "This is a scheduled task."
+        # Add your commands or script here
+
